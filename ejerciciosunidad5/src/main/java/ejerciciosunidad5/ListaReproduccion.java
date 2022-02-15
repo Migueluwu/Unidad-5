@@ -5,6 +5,7 @@
 package ejerciciosunidad5;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -78,4 +79,15 @@ public class ListaReproduccion {
 
         return -1;
     }
+    
+    public void ordenarNombre(){
+        Collections.sort(this.listaReproduccion);
+    }
+    public int buscarPorNombre(Cancion cancion){
+        return Collections.binarySearch(listaReproduccion, cancion);
+    }
+    
+//    public void ordenarPorDuracion(){
+//       Collections.sort(listaReproduccion, (Cancion c1, Cancion c2)->c1.getDuracion().compareTo(c2.getDuracion()));
+//    }
 }

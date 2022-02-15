@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author miguel
  */
-public class Cancion {
+public class Cancion implements Comparable<Cancion>{
     private String nombre;
     private int duracion;
     private String estilo;
@@ -71,5 +71,10 @@ public class Cancion {
     @Override
     public String toString() {
         return "Cancion{" + "nombre=" + nombre + ", duracion=" + duracion + ", estilo=" + estilo + '}';
+    }
+
+    @Override
+    public int compareTo(Cancion o) {
+        return this.nombre.compareTo(o.nombre);
     }
 }
