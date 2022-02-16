@@ -7,6 +7,7 @@ package ejerciciosunidad5;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
@@ -84,4 +85,18 @@ public class ListaLibros {
     public void ordenarComparatorNombre(){
         Collections.sort(lista, (Libro l1, Libro l2)->l1.getNombre().compareTo(l2.getNombre()));
     }
+    public void ordenarPorPaginas(){
+    Collections.sort(lista,(l1,l2)->l1.getNumPag()-l2.getNumPag());
+    
+    }
+    public void ordenarNombrePaginas(){
+        Comparator<Libro>criterioNombre=(l1,l2)->l1.getNombre().compareTo(l2.getNombre());
+        Comparator<Libro>criterioPag=(l1,l2)->l1.getNumPag()-l2.getNumPag();
+        Comparator<Libro>criterioNombrePag=criterioNombre.thenComparing(criterioPag);
+        Collections.sort(lista, criterioNombrePag);
+    }
+    public int buscarBinarioNombre(Libro l){
+        return Collections.binarySearch(lista, l,(Libro l1, Libro l2)->l1.getNombre().compareTo(l2.getNombre()));
+    }
+
 }

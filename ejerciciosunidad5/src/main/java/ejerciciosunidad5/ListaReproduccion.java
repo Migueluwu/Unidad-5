@@ -87,7 +87,12 @@ public class ListaReproduccion {
         return Collections.binarySearch(listaReproduccion, cancion);
     }
     
-//    public void ordenarPorDuracion(){
-//       Collections.sort(listaReproduccion, (Cancion c1, Cancion c2)->c1.getDuracion().compareTo(c2.getDuracion()));
-//    }
+    public void ordenarPorDuracion(){
+       Collections.sort(listaReproduccion,
+               (Cancion c1, Cancion c2)->c1.getDuracion()-c2.getDuracion());
+    }
+    public int buscarPorDuracion(Cancion c){
+        return Collections.binarySearch(listaReproduccion, c,
+                (Cancion c1, Cancion c2)->c1.getDuracion()-c2.getDuracion());
+    }
 }
