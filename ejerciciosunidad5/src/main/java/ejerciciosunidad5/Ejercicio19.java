@@ -18,9 +18,10 @@ public class Ejercicio19 {
         Avion avion=new Avion();
         
         avion.reservarAsiento(0, 0);
-        avion.reservarAsiento(3, 5);
+        avion.reservarAsiento(3, 5);//este no vale
         avion.reservarAsiento(1, 1);
         avion.reservarAsiento(2, 3);
+        avion.cancelarAsiento(1, 1);
         avion.imprimirAvion();
         
     }
