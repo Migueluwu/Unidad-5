@@ -1,23 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ejerciciosunidad5;
+
+package tarea5d_miguel_martin;
+
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 
 /**
  *
  * @author miguel
  */
-public class Ejercito {
-
+public class EjercitoOrdenado {
     Set<Soldado> ejercito;
 
-    public Ejercito() {
-        ejercito = new HashSet();
+    public EjercitoOrdenado() {
+        ejercito = new TreeSet();
     }
 
     public int numeroSoldados() {
@@ -51,6 +54,4 @@ public class Ejercito {
     }
     
 
-    
-    
 }

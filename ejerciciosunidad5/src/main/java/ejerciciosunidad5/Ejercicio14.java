@@ -22,36 +22,36 @@ public class Ejercicio14 {
         Random ale = new Random();
         int matriz[][] = new int[FILA][COLUMNA];
         //Introduce valores/////
+
         for (int i = 0; i < matriz.length; i++) {
-            System.out.println("");
             for (int j = 0; j < matriz[i].length; j++) {
                 matriz[i][j] = ale.nextInt(10);
             }
-            
+
         }
         //Imprime///////////////
         imprimirMatriz(matriz);
         ///////////Media/////////////////////
-        int suma=0;
+        int suma = 0;
         for (int i = 0; i < matriz.length; i++) {
-            
+
             for (int j = 0; j < matriz[i].length; j++) {
-                suma=suma+matriz[i][j];
+                suma = suma + matriz[i][j];
             }
         }
-        int media=suma/(FILA*COLUMNA);
+        int media = suma / (FILA * COLUMNA);
 //        System.out.println("La media es: "+media);
         /////////////////valor minimo y valor maximo
-        int minimo=matriz[0][0];
-        int maximo=matriz[0][0];
-         for (int i = 0; i < matriz.length; i++) {
-            
+        int minimo = matriz[0][0];
+        int maximo = matriz[0][0];
+        for (int i = 0; i < matriz.length; i++) {
+
             for (int j = 0; j < matriz[i].length; j++) {
-                if(minimo>matriz[i][j]){
-                    minimo=matriz[i][j];
+                if (minimo > matriz[i][j]) {
+                    minimo = matriz[i][j];
                 }
-                if(maximo<matriz[i][j]){
-                    maximo=matriz[i][j];
+                if (maximo < matriz[i][j]) {
+                    maximo = matriz[i][j];
                 }
             }
         }
@@ -60,57 +60,60 @@ public class Ejercicio14 {
 //        recorrerFila(1, matriz);
 //        recorrerColumna(1, matriz);
         System.out.println("");
-        recorrerVecinas(1, 1, matriz);
+        recorrerVecinas(0, 0, matriz);
     }
-    
-    private static void imprimirMatriz(int [][]matriz){
+
+    private static void imprimirMatriz(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             System.out.println("");
             for (int j = 0; j < matriz[i].length; j++) {
-                System.out.print(matriz[i][j]+" ");
+                System.out.print(matriz[i][j] + " ");
             }
         }
         System.out.println("");
     }
-    
-    
-    private static void recorrerFila(int numFila,int [][] matriz){
-        int fila[]=new int[matriz[numFila].length];
-        if(numFila>=0&&numFila<matriz[numFila].length){
-            for(int i=0;i<fila.length;i++){
-                System.out.print(matriz[numFila][i]+" ");
+
+    private static void recorrerFila(int numFila, int[][] matriz) {
+        int fila[] = new int[matriz[numFila].length];
+        if (numFila >= 0 && numFila < matriz[numFila].length) {
+            for (int i = 0; i < fila.length; i++) {
+                System.out.print(matriz[numFila][i] + " ");
             }
             System.out.println("");
-        }else{
+        } else {
             System.out.println("Numero de fila no valido");
         }
-        
+
     }
-    
-    private static void recorrerColumna(int numColumna,int [][] matriz){
-        if(numColumna>=0&&numColumna<matriz.length){
-            for(int i=0;i<matriz.length;i++){
-                System.out.print(matriz[i][numColumna]+" ");
+
+    private static void recorrerColumna(int numColumna, int[][] matriz) {
+        if (numColumna >= 0 && numColumna < matriz.length) {
+            for (int i = 0; i < matriz.length; i++) {
+                System.out.print(matriz[i][numColumna] + " ");
             }
             System.out.println("");
-        }else{
+        } else {
             System.out.println("numero de columna no valido");
         }
-        
+
     }
-    private static void recorrerVecinas(int numFila, int numColumna, int [][]matriz){
-        if(numFila>0&& numFila+1<matriz.length && numColumna>0 && numColumna+1<matriz[numFila].length){
-            for(int i=numFila-1;i<=numFila+1;i++){
-                for(int j=numColumna-1;j<=numColumna+1;j++){
-                    System.out.print(matriz[i][j]+" ");
+
+    private static void recorrerVecinas(int numFila, int numColumna, int[][] matriz) {
+        if (numFila >= 0 && numFila < matriz.length && numColumna >= 0 && numColumna < matriz[numFila].length) {
+            for (int i = numFila - 1; i <= numFila + 1; i++) {
+                for (int j = numColumna - 1; j <= numColumna + 1; j++) {
+                    try {
+                        System.out.print(matriz[i][j] + " ");
+                    } catch (ArrayIndexOutOfBoundsException aioobe) {
+                        System.out.print(" X ");
+                    }
                 }
                 System.out.println("");
             }
-        }else{
+        } else {
             System.out.println("Numero de filas o columnas no valido");
         }
-        
+
     }
-    
-    
+
 }
