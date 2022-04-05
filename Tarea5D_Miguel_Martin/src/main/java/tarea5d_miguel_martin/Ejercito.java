@@ -40,9 +40,9 @@ public class Ejercito {
         return ejercito.contains(soldado);
     }
     public ArrayList<Soldado> imprimir(){
-        ArrayList<Soldado> ejerciolista=new ArrayList<>();
+        ArrayList<Soldado> ejerciolista=new ArrayList<>(ejercito);
         
-            ejerciolista.addAll(ejercito);
+//            ejerciolista.addAll(ejercito);
         
         return ejerciolista;
     }

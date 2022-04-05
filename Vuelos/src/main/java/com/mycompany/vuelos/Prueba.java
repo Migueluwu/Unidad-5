@@ -23,23 +23,23 @@ public class Prueba {
         // TODO code application logic here
         ArrayList<Vuelos> listaVuelos = new ArrayList<>();
         listaVuelos.add(new Vuelos("123", "Malaga", "Madrid", 90));
-        listaVuelos.get(0).listaPasajeros.add(new Pasajeros("456", "Miguel", "Martin", "6653256889"));
-        listaVuelos.get(0).listaPasajeros.add(new Pasajeros());
-        listaVuelos.get(0).listaPasajeros.add(new Pasajeros());
-        listaVuelos.get(0).listaPasajeros.add(new Pasajeros());
-        listaVuelos.get(0).listaPasajeros.add(new Pasajeros());
-        listaVuelos.get(0).listaPasajeros.add(new Pasajeros());
+        listaVuelos.get(0).getListaPasajeros().add(new Pasajeros("456", "Miguel", "Martin", "6653256889"));
+        listaVuelos.get(0).getListaPasajeros().add(new Pasajeros());
+        listaVuelos.get(0).getListaPasajeros().add(new Pasajeros());
+        listaVuelos.get(0).getListaPasajeros().add(new Pasajeros());
+        listaVuelos.get(0).getListaPasajeros().add(new Pasajeros());
+        listaVuelos.get(0).getListaPasajeros().add(new Pasajeros());
         // En total 6 pasajeros en el primer vuelo
         listaVuelos.add(new Vuelos("123", "Madrid", "Francia", 120));
-        listaVuelos.get(1).listaPasajeros.add(new Pasajeros());
-        listaVuelos.get(1).listaPasajeros.add(new Pasajeros());
-        listaVuelos.get(1).listaPasajeros.add(new Pasajeros());
-        listaVuelos.get(1).listaPasajeros.add(new Pasajeros());
+        listaVuelos.get(1).getListaPasajeros().add(new Pasajeros());
+        listaVuelos.get(1).getListaPasajeros().add(new Pasajeros());
+        listaVuelos.get(1).getListaPasajeros().add(new Pasajeros());
+        listaVuelos.get(1).getListaPasajeros().add(new Pasajeros());
         // En total 4 pasajeros
         listaVuelos.add(new Vuelos("123", "Malaga", "Francia", 120));
-        listaVuelos.get(2).listaPasajeros.add(new Pasajeros());
-        listaVuelos.get(2).listaPasajeros.add(new Pasajeros());
-        listaVuelos.get(2).listaPasajeros.add(new Pasajeros());
+        listaVuelos.get(2).getListaPasajeros().add(new Pasajeros());
+        listaVuelos.get(2).getListaPasajeros().add(new Pasajeros());
+        listaVuelos.get(2).getListaPasajeros().add(new Pasajeros());
         // 3 pasajeros en el vuelo 2
 
         //6 pasajeros van para madrid y 7 para francia
@@ -66,9 +66,10 @@ public class Prueba {
         HashMap<String, Integer> listaDestino = new HashMap<>();
         for (Vuelos aux : listaVuelos) {
             if (listaDestino.containsKey(aux.getDestino())) {
-                listaDestino.replace(aux.getDestino(), listaDestino.get(aux.getDestino()) + aux.listaPasajeros.size());
+                listaDestino.replace(aux.getDestino(), listaDestino.get(aux.getDestino()) 
+                        + aux.getListaPasajeros().size());
             } else {
-                listaDestino.put(aux.getDestino(), aux.listaPasajeros.size());
+                listaDestino.put(aux.getDestino(), aux.getListaPasajeros().size());
             }
         }
 
@@ -79,9 +80,10 @@ public class Prueba {
         TreeMap<String, Integer> listaDestino = new TreeMap<>();
         for (Vuelos aux : listaVuelos) {
             if (listaDestino.containsKey(aux.getDestino())) {
-                listaDestino.replace(aux.getDestino(), listaDestino.get(aux.getDestino()) + aux.listaPasajeros.size());
+                listaDestino.replace(aux.getDestino(), listaDestino.get(aux.getDestino()) 
+                        + aux.getListaPasajeros().size());
             } else {
-                listaDestino.put(aux.getDestino(), aux.listaPasajeros.size());
+                listaDestino.put(aux.getDestino(), aux.getListaPasajeros().size());
             }
         }
 
@@ -91,7 +93,7 @@ public class Prueba {
     public static HashMap<String, ArrayList<Pasajeros>> metodo3(ArrayList<Vuelos> listaVuelos) {
         HashMap<String, ArrayList<Pasajeros>> listaPasajeros = new HashMap<>();
         for (Vuelos aux : listaVuelos) {
-            listaPasajeros.put(aux.getCodigoVuelo(), aux.listaPasajeros);
+            listaPasajeros.put(aux.getCodigoVuelo(), aux.getListaPasajeros());
         }
         return listaPasajeros;
     }

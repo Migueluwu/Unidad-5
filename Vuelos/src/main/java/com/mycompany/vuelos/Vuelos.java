@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Vuelos {
     private String codigoVuelo, origen, destino; 
     private int duración;
-    ArrayList <Pasajeros> listaPasajeros;
+    private ArrayList <Pasajeros> listaPasajeros;
 
     public Vuelos() {
         this.listaPasajeros=new ArrayList<>();

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejercito;
+package ejercito;
 
 import java.util.SortedMap;
 import java.util.TreeMap;
